@@ -1,0 +1,11 @@
+﻿python.exe : Traceback (most recent call last):
+At line:1 char:1
++ & 'C:\Users\justinsu\anaconda3\envs\raven\python.exe' -c 'from scipy. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 1, in <module>
+    from scipy.spatial import ConvexHull; print(chr(79)+chr(75))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'scipy'

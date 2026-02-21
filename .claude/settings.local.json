@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c:*)",
+      "Bash(C:Usersjustinsuanaconda3condabinconda.bat run -n raven python c:UsersjustinsuDesktopraven_project_sample_ws.py)"
+    ]
+  }
+}
