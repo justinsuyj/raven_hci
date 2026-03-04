@@ -1,0 +1,57 @@
+J =θ +g/2 (80)
+5 6
+J =θ −g/2 (81)
+6 6
+Conversionofkinematicsanglestojointanglescanbeaccomplishedbythefollowing:
+
+J
+ 
+θ
+  205◦
+0 1
+J 1 θ 2 180◦
+     
+J 2 d 3  0 
+J¯ L =  J 3  =  θ 4  −   0◦   (82)
+     
+J 4 θ 5 −90◦
+     
+J 5 θ 6a  0◦ 
+J θ 0◦
+6 6b
+5.10.2 RightArm
+Mechanicalshoulderjointoftheleftarm(J )zeroangleiselevated25degreeselevationfromparallelwiththebase,
+0
+so:
+J =θ −25◦ (83)
+0 1
+Unliketherightarm,theleftmechanical”elbow”joint(J )hasnooffsetfromθ ,so:
+1 2
+J =θ (84)
+1 2
+J —J aretreatedthesameasintheLeftarm,andso:
+1 7
+ J   θ   25◦ 
+0 1
+J 1 θ 2  0◦ 
+     
+J 2 d 3  0 
+J¯ R =  J 3  =  θ 4  −   0◦   (85)
+     
+J 4 θ 5 −90◦
+     
+J 5 θ 6a  0◦ 
+J θ 0◦
+6 6b
+6 Jacobian Matrix
+TheJacobianmatrixinframe6hasbeencomputedusingthemethodofvelocitypropagation(withthesympysymbolic
+manipulationpackage). TheJacobianrelatestojoint6intheDHmodelofthisdocument. Thusthemotionofeach
+fingerisdeterminedbysubstitutingthecorrectjointsixvalues. Forexample,incomputing
+τ =JT(θ)Fa (86)
+(whereFaisanexternalforceonfingera(seeFigure8)),thenJ mustbecomputedusingθ (seeTable4).
+6a
+Notethat6J representsincrementalmotioninFrame6whichiscenteredonthegripingaxis(Z Figure8).
+6 6a,b,c
+ThereforegrippingforcehastobecomputedbyJoint6torquesandassumedleverarmsanddoesnotdependonthis
+Jacobian.
+UWEETR-2012-0006 19

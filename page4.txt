@@ -1,0 +1,29 @@
+Figure2: Indicatingthelocationofthebaseframefortherightarm. Notethatthebaseframeoriginisconcealedand
+offset(intheY orY direction)bythethicknessofthesilvercoloredmountingplate.
+BL BR
+Figure3: Illustrationofbaseframepositionandorientationforleftandrightarms.
+d must be negative according to the Z direction specified in Figure 8. Raven “Diamond” tool is the default
+4 4
+shippedwithRavenII’sin2012and2013. Raven“Square”toolisonlyatUWandUCSC.
+2.3 AxesofMotion
+TheaxesofmotionareidentifiedbyZ vectorswhosedirectionindicatestheconventionforpositivejointrotationas
+i
+givenbytheRightHandRule.
+2.4 LinkFrameAssignments
+FramesareassignedtoeachlinkaccordingtoCraig’sversionoftheDenavitHartenbergconvention[1]. Inallcases,
+thedirectionoftheZ axisischosensuchthatpositivechangesinθ areconsistentwiththeright-hand-rule. When
+N N
+consecutiveaxesintersect,thecommonnormal,X ischosensuchthat
+N
+X =Z ×Z
+N N N+1
+where×indicatesthevectorcrossproduct.
+2.4.1 PositioningJoints
+Linkframesforthepositioningjoints(Frames1-3)arerelatedtothemotioncenterandareshowninFigure5. There
+aredifferencesbetweentheleftandrightarmgeometriesandlinkframesareassignedslightlydifferentlyinleftvs.
+rightarm.
+IntheFigure5,La andLa aretheanglesofthefixedmechansimlinks. FortheRaven-IITM La =La =
+12 23 12 12
+75◦andLa =52◦(Figure7).
+23
+UWEETR-2012-0006 3

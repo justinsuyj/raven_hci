@@ -1,0 +1,55 @@
+motors (which are where position sensors are located) because of mechanical advantage of the cables/pulleys, and
+gears. ConversionstepsmustthereforebeperformedamongMotorangles(Mpos),Jointangles(J ),andKinematics
+i
+angles(θ )(Figure14). AlsonotethattheJointvariables,J areindexedusingtheCconvention(firstelementisJ )
+i i 0
+whereastheKinematicsangles,θ areindexedstartingwith1inthetraditionalDenavitHartenbergmanner. Alsonote
+i
+that computational implementations of inverse kinematics may yield θ values in radians. If so, each θ value may
+i i
+needtobemultipliedby180◦/πaspartofthefollowingsteps.
+Figure14: TherelationshipbetweenkinematicsanglesΘ,Softwarejointangles,andmotorangles(“CartesianTrans-
+form(X)”isdenotedbyAT inthisdocument).
+B
+5.10.1 Leftarm
+Mechanicalshoulder(J )zeroangleiselevated25degreesfromparallelwiththebase. Also,itvariesfromkinematic,
+0
+θ byanadditional180◦rotation,so:
+1
+J =θ −180◦−25◦ =θ −205◦ (73)
+0 1 1
+Mechanical elbow joint (J ) zero is at full extension of joint 2. This is opposite to the joint 2 kinematics result
+1
+whichhasθ =0whentheelbowisfoldedback,so:
+2
+J =θ −180◦ (74)
+1 2
+Insertion axis (J ) cannot physically achieve d3=0, since it would require the tool carriage to be at the RCM.
+2
+However,thisisnotaproblem,solongastherobotisnotcommandedtothispose. Simplyset:
+J =d (75)
+2 3
+and initialize the tool offset to 559.40 mm when the tool is fully un-inserted (i.e., retracted and up against its hard
+stop).
+Toolroll(J )zerocorrespondswithkinematicsθ :
+3 4
+J =θ (76)
+3 4
+Tool wrist (J ) zero is corresponds to a straight-out pose in which X is aligned 180◦ from Z . Achieving this
+4 5 4
+anglerequiresθ =−90◦,so:
+5
+J =θ +90◦ (77)
+4 5
+Theactualtoolhastwo“link6”structurescorrespondingtothetwofingersofthegrasper. Thepositionofthese
+aredenotedJ andJ . MechanismanglesJ =0andJ =0correspondto:
+5 6 5 6
+X ||X ||X ||X . (78)
+6a 6b 6c 5
+Furthermore,twocontrolmodesarepossible:controlofeachfinger,orcontrolofgraspercenter-point.Theformer
+requirestwoiterationsoftheforwardkinematicswiththeorientationofeachfingerspecifiedinadesiredtransform
+andthus:
+J =θ J =θ (79)
+5 6a 6 6b
+Thelatterrequiresanadditionalvariable: “graspangle”,g.
+UWEETR-2012-0006 18

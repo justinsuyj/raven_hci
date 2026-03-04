@@ -1,0 +1,36 @@
+1. ComputethetwoP solutions,Equation(34).
+5
+2. ComputethedistancefromRCM toeachP (||P || , ||P || )
+5 5a 2 5b 2
+3. ComputeP andP
+5close 5far
+4. Projectx ontoP Equation(35).
+6 RCM
+5. ifp <0useP elseifp >=0useP
+r 5close r 5far
+Forthecaseofthejawsbeingopenbeyond180◦,theabovesolutionwouldbereversed.
+5.4 Computelengthofprismaticjoint,d
+3
+Once P is found, the two solutions to d are illustrated in Figure (12). With reference to Figure 12, and assuming
+5 3
+a =0,thedistancefromtheorigintoP isreadilyfoundusingtheEuclidiannormof0P :
+3 5 5
+d +d =||0P || (36)
+3 4 5 2
+(cid:113)
+d =−d ± 0X 2+0Y 2+0Z 2 (37)
+3 4 P5 P5 P5
+Thereareinitiallytwosolutionstod duetothesquareroot.
+3
+Figure12: Illustrationoftwosolutionstotheprismaticjointd . P istheoriginofFrame6. OriginofFrames0,1,2
+3 6
+istheRCM.a isdrawnwithnon-zeroextentforclarityonly. The“b”solutionisnotphysicallyreachablewiththe
+3
+Raven-IIhardware.
+5.5 Computeθ
+2
+Nextwecomputeθ using0P ,d andd .
+2 5 3 4
+Letsin[α ]=γ , cos[α ]=γ , sin[α ]=γ , cos[α ]=γ , d +d =d
+12 1 12 2 23 3 23 4 3 4
+UWEETR-2012-0006 14

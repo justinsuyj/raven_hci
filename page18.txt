@@ -1,0 +1,50 @@
+p
+5
+√
+±
+d 3a d 3b
+Testcos−1(x)arguments.
+d
+3
+±cos−1(x)
+θ 2a θ 2b
+θ 1a θ 1b
+θ 4a θ 4b
+θ 5a ,θ 6a θ 5b ,θ 6b
+Figure13: ThetwosolutionstotheRavenIIinversekinematics(fora =0).
+3
+5.9 Computeθ
+6
+Finally,wecomputeθ .
+6
+Ifs (cid:54)=0,
+5
+−3T(3,2) 3T(3,1)
+s = 6 , c = 6 (66)
+6 s 6 s
+5 5
+Or,ifs =0,
+5
+0T =0T 3T 5T (67)
+6 D 3 5 6
+5T =3T−10T−10T (68)
+6 D 5 3 6 D
+ 
+c −s 0 l
+6 6 w
+5 6 T D =    s 0 6 c 0 6 − 0 1 0 0    (69)
+0 0 0 1
+(70)
+s =5T(3,1) c =5T(3,2) (71)
+6 6 6 6
+Andso,
+θ =atan2(s ,c ). (72)
+6 6 6
+SolutionTree Therearetwosolutionstotheinversekinematics. Theyaregroupedaccordingtothemultiplicityof
+solutionsofvariousstepsabove. AgraphofthevarioussolutionsisshowninFigure13.
+5.10 Kinematics,JointAngles,andMotorAngles
+As a practical matter, the θ used in the kinematics analysis are offset to mechanical joint angles by the Raven II
+i
+softwareandfurtherconvertedtoMotorangles. ThemechanismjointanglesJ ,aredifferentfromtheanglesofthe
+i
+UWEETR-2012-0006 17

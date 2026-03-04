@@ -1,0 +1,27 @@
+Figure6: PositionofFrame3relativetomechanism.
+Figure7: LinkanglesdesignatedLa andLa .
+12 23
+referencepoint,theoriginofthegraspingframeG.
+• Frame6cThisframeisalignedwiththeupperjaw.
+Finally,wecreatea“GraspingFrame,”7 whichisorientedinalignmentwithFrame6 butistranslatedoutabout
+b b
+1/2thelengthofthejaws(l ). Thisisausefulreferenceforaligningthegrasperwithanobjecttobecapturedbya
+G
+subsequentgraspingoperation.
+2.5 DHParameters
+2.5.1 PositioningJoints
+TheDenavitHartebergparametersforthetwoarmsaregiveninTables2and3.
+Inallcases,d isavariablewhichrepresentstheprismaticjointmotion,andd isafixedoffsetrepresentingthe
+3 4
+tool length- the distance from the center point of the four spindles to the origin of frame 4; which is nominally the
+wrist.
+i α a d θ
+i−1 i−1 i i
+1 0 0 0 θ
+1
+2 La 0 0 θ
+12 2
+3 π−La 0 d π/2
+23 3
+Table2: Left(Gold)Armparametersforthepositioningjoints.
+UWEETR-2012-0006 5

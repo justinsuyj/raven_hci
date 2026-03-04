@@ -1,0 +1,73 @@
+ 
+1 0 0 l
+G
+6bT =   0 1 0 0   (12)
+7b  0 0 1 0 
+0 0 0 1
+3.2 ForwardKinematicEquations
+Theforwardkinematicsmodelisobtainedby
+0T =0T1T2T3T4T5 T (13)
+6 1 2 3 4 5 6x
+where6xdesignatesanyofthethreefinalframes(6a,6b,6c).
+In the following, we will drop the subscript. Starting from the end effector, we will multply the matrices and
+x
+accumulateintermediateproductswhichwillbeusefullaterforinversekinematics.
+InthefollowingequationsthesigntermsinparenthesesrefertotheLeftandRightarmsrespectively(L/R).
+4T =4 T5T = (14)
+6 5 6
+ 
+c c −c s s c l
+5 6 5 6 5 5 w
+ −s 6 −c 6 0 0 
+ 
+ c 6 s 5 −s 5 s 6 −c 5 l w s 5 
+0 0 0 1
+3T =3 T4T = (15)
+6 4 6
+ 
+c c c +s s c s −c c s c s a +c c l
+4 5 6 4 6 6 4 4 5 6 4 5 3 4 5 w
+ c 5 c 6 s 4 −c 4 s 6 −c 4 c 6 −c 5 s 4 s 6 s 4 s 5 c 5 l w s 4 
+ 
+ c 6 s 5 −s 5 s 6 −c 5 d 4 +l w s 5 
+0 0 0 1
+2T =2T3T = (16)
+6 R 3 6
+
+c c s −c s −c c −c s s
+5 6 4 4 6 4 6 5 4 6
+ −cα 23 (c 4 c 5 c 6 +s 4 s 6 )−c 6 s 5 sα 23 −cα 23 (c 6 s 4 −c 4 c 5 s 6 )+s 5 s 6 sα 23
+
+ c 6 cα 23 s 5 −(c 4 c 5 c 6 +s 4 s 6 )sα 23 −cα 23 s 5 s 6 −(c 6 s 4 −c 4 c 5 s 6 )sα 23
+0 0
+
+s s c l s
+4 5 5 w 4
+−c 4 cα 23 s 5 +c 5 sα 23 −cα 23 (a 3 +c 4 c 5 l w )−d R3 sα 23 −(d 4 +l w s 5 )sα 23 
+
+−c 5 cα 23 −c 4 s 5 sα 23 cα 23 d R3 +cα 23 (d 4 +l w s 5 )−(a 3 +c 4 c 5 l w )sα 23 
+0 1
+1T =1T2T = (17)
+6 R 2 6
+
+c (c c s −c s )−s (−cα (c c c +s s )−c s sα )
+2 5 6 4 4 6 R2 23 4 5 6 4 6 6 5 23
+ cα 12 (c 5 c 6 s 4 −c 4 s 6 )s R2 +c 2 cα 12 (−cα 23 (c 4 c 5 c 6 +s 4 s 6 )−c 6 s 5 sα 23 )−sα 12 (c 6 cα 23 s 5 −(c 4 c 5 c 6 +s 4 s 6 )sα 23 )
+
+ (c 5 c 6 s 4 −c 4 s 6 )s R2 sα 12 +c 2 sα 12 (−cα 23 (c 4 c 5 c 6 +s 4 s 6 )−c 6 s 5 sα 23 )+cα 12 (c 6 cα 23 s 5 −(c 4 c 5 c 6 +s 4 s 6 )sα 23 )
+0
+c (−c c −c s s )−s (−cα (c s −c c s )+s s sα )
+2 4 6 5 4 6 R2 23 6 4 4 5 6 5 6 23
+cα (−c c −c s s )s +c cα (−cα (c s −c c s )+s s sα )−sα (−cα s s −(c s −c c s )sα )
+12 4 6 5 4 6 R2 2 12 23 6 4 4 5 6 5 6 23 12 23 5 6 6 4 4 5 6 23
+(−c c −c s s )s sα +c sα (−cα (c s −c c s )+s s sα )+cα (−cα s s −(c s −c c s )sα )
+4 6 5 4 6 R2 12 2 12 23 6 4 4 5 6 5 6 23 12 23 5 6 6 4 4 5 6 23
+0
+c s s −s (−c cα s +c sα )
+2 4 5 R2 4 23 5 5 23
+cα s s s +c cα (−c cα s +c sα )−sα (−c cα −c s sα )
+12 4 5 R2 2 12 4 23 5 5 23 12 5 23 4 5 23
+s s s sα +c sα (−c cα s +c sα )+cα (−c cα −c s sα )
+4 5 R2 12 2 12 4 23 5 5 23 12 5 23 4 5 23
+0
+UWEETR-2012-0006 9

@@ -1,0 +1,73 @@
+
+c c l s −s β
+2 5 w 4 R2 1
+c 5 cα 12 l w s 4 s R2 +c 2 cα 12 β 1 −sα 12 β 2 
+
+c 5 l w s 4 s R2 sα 12 +c 2 sα 12 β 1 +cα 12 β 2 
+1
+Where,
+β =−cα (a +c c l )−d sα −(d +l s )sα
+1 23 3 4 5 w R3 23 4 w 5 23
+β =cα d +cα (d +l s )−(a +c c l )sα
+2 23 R3 23 4 w 5 3 4 5 w 23
+0T =0T1T = (18)
+6 R 1 6
+
+−s (cα s τ −sα (−sα τ +cα τ )+c cα (−cα τ −sα τ ))+c (c τ −s (−cα τ −sα τ ))
+R1 12 R2 21 12 23 11 23 31 2 12 23 11 23 31 R1 2 21 R2 23 11 23 31
+ c R1 (cα 12 s R2 τ 21 −sα 12 (−sα 23 τ 11 +cα 23 τ 31 )+c 2 cα 12 (−cα 23 τ 11 −sα 23 τ 31 ))+s R1 (c 2 τ 21 −s R2 (−cα 23 τ 11 −sα 23 τ 31 ))
+
+ s R2 sα 12 τ 21 +cα 12 (−sα 23 τ 11 +cα 23 τ 31 )+c 2 sα 12 (−cα 23 τ 11 −sα 23 τ 31 )
+0
+−s (cα s τ −sα (−sα τ −cα τ )+c cα (−cα τ +sα τ ))+c (c τ −s (−cα τ +sα τ ))
+R1 12 R2 22 12 23 12 23 32 2 12 23 12 23 32 R1 2 22 R2 23 12 23 32
+c (cα s τ −sα (−sα τ −cα τ )+c cα (−cα τ +sα τ ))+s (c τ −s (−cα τ +sα τ ))
+R1 12 R2 22 12 23 12 23 32 2 12 23 12 23 32 R1 2 22 R2 23 12 23 32
+s sα τ +cα (−sα τ −cα τ )+c sα (−cα τ +sα τ )
+R2 12 22 12 23 12 23 32 2 12 23 12 23 32
+0
+c (−s (c sα −cα τ )+c τ )−s (c cα (c sα −cα τ )−sα (−c cα −sα τ )+cα s τ )
+R1 R2 5 23 23 13 2 23 R1 2 12 5 23 23 13 12 5 23 23 13 12 R2 23
+s (−s (c sα −cα τ )+c τ )+c (c cα (c sα −cα τ )−sα (−c cα −sα τ )+cα s τ )
+R1 R2 5 23 23 13 2 23 R1 2 12 5 23 23 13 12 5 23 23 13 12 R2 23
+c sα (c sα −cα τ )+cα (−c cα −sα τ )+s sα τ
+2 12 5 23 23 13 12 5 23 23 13 R2 12 23
+0
+
+c (c c l s −s β )−s (c cα l s s +c cα β −sα β )
+R1 2 5 w 4 R2 1 R1 5 12 w 4 R2 2 12 1 12 2
+s R1 (c 2 c 5 l w s 4 −s R2 β 1 )+c R1 (c 5 cα 12 l w s 4 s R2 +c 2 cα 12 β 1 −sα 12 β 2 ) 
+
+c 5 l w s 4 s R2 sα 12 +c 2 sα 12 β 1 +cα 12 β 2 
+1
+Where
+τ =c c c +s s (19)
+11 4 5 6 4 6
+τ =c c s −c s (20)
+21 5 6 4 4 6
+τ =c s (21)
+31 6 5
+τ =c s −c c s (22)
+12 6 4 4 5 6
+τ =−c c −c s s (23)
+22 4 6 5 4 6
+τ =s s (24)
+32 5 6
+τ =c s (25)
+13 4 5
+τ =s s (26)
+23 4 5
+τ =a +c c l (27)
+14 3 4 5 w
+τ =c l s (28)
+24 5 w 4
+τ =d +l s (29)
+34 4 w 5
+(30)
+4 Workspace
+Full consideration of workspace requires joint limits which are beyond the scope of this document. However, for
+thepointofviewofInverseKinematics(nextsection),itisworthnotingthatthedexterousworkspace(workspacein
+whichanyorientationcanbereached)DOESNOTincludeasphereofradiusl aroundtheRCM(theoriginofFrame
+w
+0). ThisisillustratedinFigure10.
+UWEETR-2012-0006 10

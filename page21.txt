@@ -1,0 +1,92 @@
+Jacobian6J firstcolumn:
+6
+col1row1
+ 
+lc c c l s +c c d s s +c c d s s
+a12 a23 5 w 6 a12 4 3 a23 6 a12 4 4 a23 6
+ +c a12 c 4 l w s a23 s 5 s 6 −c a12 c 5 c 6 d 3 s a23 s 4 −c a12 c 5 c 6 d 4 s a23 s 4 
+ 
+  −c 2 c a23 c 4 d 3 s a12 s 6 −c 2 c a23 c 4 d 4 s a12 s 6 −c 2 c a23 c 4 l w s a12 s 5 s 6   (87)
++c 2 c a23 c 5 c 6 d 3 s a12 s 4 +c 2 c a23 c 5 c 6 d 4 s a12 s 4 +c 2 c 5 l w s a12 s a23 s 6
+ 
+ −c 4 c 5 c 6 d 3 s a12 s 2 −c 4 c 5 c 6 d 4 s a12 s 2 −d 3 s a12 s 2 s 4 s 6 
+−d s s s s −l s s s s s
+4 a12 2 4 6 w a12 2 4 5 6
+col1row2
+ 
+lc c c c l +c c c d s +c c c d s
+a12 a23 5 6 w a12 4 6 3 a23 a12 4 6 4 a23
+ +c a12 c 4 c 6 l w s a23 s 5 +c a12 c 5 d 3 s a23 s 4 s 6 +c a12 c 5 d 4 s a23 s 4 s 6 
+ 
+  −c 2 c a23 c 4 c 6 d 3 s a12 −c 2 c a23 c 4 c 6 d 4 s a12 −c 2 c a23 c 4 c 6 l w s a12 s 5   (88)
+−c 2 c a23 c 5 d 3 s a12 s 4 s 6 −c 2 c a23 c 5 d 4 s a12 s 4 s 6 +c 2 c 5 c 6 l w s a12 s a23
+ 
+ +c 4 c 5 d 3 s a12 s 2 s 6 +c 4 c 5 d 4 s a12 s 2 s 6 −c 6 d 3 s a12 s 2 s 4 
+−c d s s s −c l s s s s
+6 4 a12 2 4 6 w a12 2 4 5
+col1row3
+ 
+l−c d s s s −c d s s s −c l s s
+a12 3 a23 4 5 a12 4 a23 4 5 a12 w a23 4
++c 2 c a23 d 3 s a12 s 4 s 5 +c 2 c a23 d 4 s a12 s 4 s 5 +c 2 c a23 l w s a12 s 4 (89)
+−c d s s s −c d s s s −c l s s
+4 3 a12 2 5 4 4 a12 2 5 4 w a12 2
+col1row4
+ 
+l−c c c s +c c c c s +c s s s
+a12 a23 6 5 a12 4 5 6 a23 a12 a23 4 6
+−c 2 c a23 c 4 c 5 c 6 s a12 −c 2 c a23 s a12 s 4 s 6 −c 2 c 6 s a12 s a23 s 5 (90)
++c s s s −c c s s s
+4 a12 2 6 5 6 a12 2 4
+col1row5
+ 
+lc c s s −c c c s s +c c s s
+a12 a23 5 6 a12 4 5 a23 6 a12 6 a23 4
+ +c 2 c a23 c 4 c 5 s a12 s 6 −c 2 c a23 c 6 s a12 s 4  (91)
++c s s s s +c c s s +c s s s s
+2 a12 a23 5 6 4 6 a12 2 5 a12 2 4 6
+col1row6
+(cid:20) (cid:21)
+lc c c +c c s s −c c c s s
+a12 a23 5 a12 4 a23 5 2 a23 4 a12 5 (92)
++c c s s −s s s s
+2 5 a12 a23 a12 2 4 5
+Jacobian6J col2
+6
+ 
+c c l s +c d s s +c d s s +c l s s s −c c d s s −c c d s s
+a23 5 w 6 4 3 a23 6 4 4 a23 6 4 w a23 5 6 5 6 3 a23 4 5 6 4 a23 4
+c a23 c 5 c 6 l w +c 4 c 6 d 3 s a23 +c 4 c 6 d 4 s a23 +c 4 c 6 l w s a23 s 5 +c 5 d 3 s a23 s 4 s 6 +c 5 d 4 s a23 s 4 s 6
+ 
+  −d 3 s a23 s 4 s 5 −d 4 s a23 s 4 s 5 −l w s a23 s 4   (93)
+ −c a23 c 6 s 5 +c 4 c 5 c 6 s a23 +s a23 s 4 s 6 
+ 
+ c a23 s 5 s 6 −c 4 c 5 s a23 s 6 +c 6 s a23 s 4 
+c c +c s s
+a23 5 4 a23 5
+Jacobian6J cols3-6
+6
+ 
+c s −c l s 0 0
+6 5 5 w 6
+−s
+5
+s
+6
+−c
+5
+c
+6
+l
+w
+0 0
+ 
+  −c 5 0 −l w 0  (94)
+ 0 c 6 s 5 s 6 0
+ 
+ 0 −s 5 s 6 c 6 0
+0 −c 0 1
+5
+wheres =sin(α )etc.
+a12 12
+UWEETR-2012-0006 20

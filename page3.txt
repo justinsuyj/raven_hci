@@ -1,0 +1,29 @@
+Figure 1: Photo of Left and Right Raven-IIsTM in the reference pose. Axis lines are superimposed in blue showing
+theirintersectionattheremotemotioncenter.
+2 Robot Description
+2.1 BaseFrame
+The Base Frame is a convenient reference frame to identify the origin of the robot with respect to the environment.
+Thereisafixedrelationship(Figure4)betweentheBaseFrameandFrameZeroforeacharm. Thetransformsfrom
+BaseFrametoFrameZeroforLeft(Gold)ArmaregiveninEquation1andfortheRight(Green)ArminEquation2.
+ 
+0 0 1 300.71
+B 0 T L =    0 1 − 0 1 0 0 − 61 7    (1)
+0 0 0 1
+ 
+0 0 −1 −300.71
+B 0 T R =    0 1 1 0 0 0 − 61 7    (2)
+0 0 0 1
+(correctedJuly2013)Alldisplacementsaregiveninmillimeters.
+2.2 RobotConstants
+RobotdimensionscrucialtothekinematicsaregiveninTable1
+Symbol Value Meaning
+La 75◦ Linkanglebetweenlinks1and2
+12
+La 52◦ Linkanglebetweenlinks2and3
+23
+d −470mm Toollength,Raven“Diamond”tool.
+4
+d −458.69mm Toollength,Raven“Squaretool”.
+4
+Table1: Kinematicsconstants(CorrectedMarch2015).
+UWEETR-2012-0006 2

@@ -1,0 +1,19 @@
+Kinematic Analysis of the Raven-IITM Research Surgical Robot
+Platform [REV: 25-Aug-2016]
+Hawkeye King, Sina Nia Kosari, Blake Hannaford
+Department of Electrical Engineering
+The University of Washington
+Seattle WA, 98195-2500
+Ji Ma
+Department of Computer Engineering
+U. C. Santa Cruz, Santa Cruz, CA 95064
+UWEE Technical Report
+Number UWEETR-2012-0006
+Revised25-Aug-16: orig.2012
+DepartmentofElectricalEngineering
+UniversityofWashington
+Box352500
+Seattle,Washington98195-2500
+PHN:(206)543-2150
+FAX:(206)543-3842
+URL:http://www.ee.washington.edu

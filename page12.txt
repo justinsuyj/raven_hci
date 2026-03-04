@@ -1,0 +1,48 @@
+Figure10:Sphericalregionofradiusl aroundtheoriginofFrame0whichcanonlybereachedinlimitedorientations.
+w
+5 Inverse Kinematics Analysis
+Kinematicanalysisforthedefault7-DoFRavenIItoolisdescribedbelow. ThesolutionassumesthatDHparameter
+a = 0; that the tool shaft runs through the RCM (recall that the RCM is origin point of Frame 0). While this
+3
+assumptionistrueforthedefaultRavenIItool,itisnotnecessarilysatisfiedbyothertools,e.g.,adapteddaVincitools.
+Thecasea (cid:54)=0requiresadditionalsteps,sincepointP cannotbedeterminedbythemethodbelow.
+3 5
+5.1 Notation
+Regardingnotation:
+• Let0T bethedesiredhomogeneoustransformoftheendeffectorwithpositionP .
+6 D 6
+AX 
+PB
+• LetAP
+B
+= AY PBdenotetheoriginofframe{B}representedinframe{A}.
+AZ
+PB
+• LetX designatetheX axisofframe{B}. SimilarforX,YandZaxes.
+B
+• LetRCM designatetherobot’sremotecenterofmotion,thesameastheoriginofFrame0.
+5.2 Strategyandoverview
+Thefollowingsolutionwasobtainedthroughthefollowingstrategy:
+1. Assumea =0.
+3
+2. Startwiththedesiredpositionandorientationoftheendeffector: 0T ,withpositionP .
+6 D 6
+3. Computethepositionofthewrist(originofframe5,designated0P ).
+5
+• Let Ω denote the X-Y plane of frame {6} formed by X ,Y ,P , and let P be the perpendicular
+1 6 6 6 RCM
+projectionofRCM ontoΩ .
+1
+• Thenpoint0P ∈Ω atadistancel frompointP inthedirectionof±P
+5 1 w 6 RCM
+4. Using0P ,thelengthoftheprismaticjoint,d +d canbefound.
+5 3 4
+5. Nowcomputetheintermediateforwardkinematicresult: 0T
+3
+6. θ canbecomputedbysetting
+2
+0Z =0T(3,4)
+P5 4
+7. Computetheknownvalueof0T ,invertit,andcombinewith0T tosolveforθ ,θ
+3 6 D 5 6
+UWEETR-2012-0006 11

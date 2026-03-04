@@ -1,0 +1,47 @@
+Figure8: FrameassignmentsforFrames4,5,6 . FordefaultRavenIItools,d =−458.69mm.
+abc 4
+i α a d θ
+i−1 i−1 i i
+1 π 0 0 θ
+1
+2 La 0 0 θ
+12 2
+3 La 0 d −π/2
+23 3
+Table3: Right(Green)Armparametersforthepositioningjoints.
+2.5.2 InstrumentJoints
+FrameassignmentandDHparametersarethesamefortheleftandrightdefaultinstrumentsandaregivenin4.
+Notethata maybezerointhecaseofstandardRaven-IITM instruments. Whenotherinstrumentsareused,there
+3
+maybeanoffsetbetweenthetoolrollaxisandthemotioncenteranda (cid:54)=0.Thelengthofvarioustoolsisrepresented
+3
+byparameterd .
+4
+i α a d θ
+i−1 i−1 i i
+4 0 a d θ
+3 4 4
+5 π/2 0 0 θ
+5
+6 π/2 l 0 θ
+a,b,c w 6a,b,c
+7 0 l 0 0
+b G
+Table4: Instrumentparameters.
+2.6 KinematicZeroPose
+Theposewhichisachievedwhenθ =0isshownschematicallyinFigure9(poseshowninFigures5and8isnotthe
+i
+zeropose). Thisposeisnotphysicallyachievablebytherobotmechanism.
+Inthezeropose:
+• X =X =X ,
+0L 1L 2L
+• X =X =X ,
+0R 1R 2R
+• Theoriginofframe3iscoincidentwiththecenterofrotation,
+• Theoriginofframe4isatdistance|d |fromthecenterofrotation,
+4
+• X ||X (X andX pointinsamedirection).
+3 4 3 4
+• X =X ,
+4 5
+UWEETR-2012-0006 6

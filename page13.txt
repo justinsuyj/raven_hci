@@ -1,0 +1,83 @@
+5.3 ComputeOriginofwristframe,0P
+5
+We designate the end point of the manipulator (actually the center of the jaw hinge which is the origin of frame 6)
+pointP . Ausefulpointfortheinversekinematicsistheoriginofframe5,whichwewillcallP .
+6 5
+LetΩ denotetheX-Yplaneofframe{6}formedbyX ,Y ,P ,andletP betheperpendicularprojection
+1 6 6 6 RCM2
+ofRCM ontoΩ .
+1 ←−−−−−→
+Assertion: P ∈Ω alongP P
+5 1 6 RCM2
+Proof:
+• Byconstructionoftherobot’sDHparameters,X ∈Ω ⇒P ∈Ω .
+5 1 5 1
+• LetΩ denoteaplaneformedbyP ,Z ,RCM
+2 6 6
+• BecauseX mustbeperpendiculartoZ ,P ∈Ω .
+5 6 5 2
+• Ω ⊥Ω withlineofintersectionΩ ∩Ω =L.
+2 1 2 1
+• NotethatP ∈L.
+5
+• ∀pointsK,{K ∈Ω },theperpendicularprojectionofK ontoΩ ,P ∈L
+2 1 K
+• RCM ∈Ω ⇒P ∈L.
+2 RCM2
+←−−−−−→
+• L=P P .
+6 RCM2
+←−−−−−→
+• ThereforeP ∈P P
+5 6 RCM2
+Furthermore,wenotethat6P istheX−Y coordinatesof6P :
+RCM2 RCM
+6X 
+RCM
+6P RCM =6 0 T D RCM =0 6 T D −1RCM = 6Y RCM (31)
+6Z
+RCM
+6X 
+RCM
+6P RCM2 = 6Y RCM (32)
+0
+ 
+1 0 0 0
+6P RCM2 =    0 0 1 0 0 0 0 0   
+(cid:20)(cid:2)0
+6 R D
+T(cid:3)
+1
+(cid:2)0P
+6
+(cid:3)(cid:21)
+(33)
+0 0 0 1
+KnowingthatP liesatdistancel fromtheoriginof{6}wecancompute:
+5 w
+6P
+6P =±l RCM2 (34)
+5 w|6P |
+RCM2
+Thishastwosolutionscorrespondingtodistance±l alongL.ThetwosolutionstoP canberesolvedasfollows.
+w 5
+BecauseX andX lieinthesameplane(Ω ),therecanbeonlyonecorrectsolutiontoP . InposestypicalofRaven
+5 6 1 5
+IIinstrumentjointlimits(i.e. −90◦ < θ < 90◦,Figure11,top)P isalwaysclosertotheRCMthanP . However,
+5 5 6
+fortheidealkinematicmechanism,otherposes(Figure11,bottom),arepossibleinwhichP iscloserthanP . These
+6 5
+casescanbeidentifiedwithoutknowingthejointanglesbyprojectingX ontoP .
+6 RCM
+First, we must assume that the jaw is not “open1” by no more than ±90◦. In this case, they project in the same
+directionasX Ifthisprojectionisnegative,thenP istheclosersolution. Iftheprojectionispositive,thenP isthe
+5 5 5
+furtherofthetwosolutions. Thus,usingFrame6,wecompute
+6x ·6P [1 0 0]T ·6P
+p = 6 RCM = RCM (35)
+r |6P | |6P |
+RCM RCM
+ToderivewhichP solutioniscorrect,
+5
+1By“open”wemean,referringtoFigure8,theanglebetweenX6aandX5islessthan90◦.
+UWEETR-2012-0006 12

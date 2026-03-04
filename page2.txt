@@ -1,0 +1,33 @@
+Kinematic Analysis of the Raven-IITM Research Surgical Robot
+Platform [REV: 25-Aug-2016]
+HawkeyeKing,SinaNiaKosari,BlakeHannaford
+DepartmentofElectricalEngineering
+TheUniversityofWashington
+SeattleWA,98195-2500
+JiMa
+DepartmentofComputerEngineering
+U.C.SantaCruz,SantaCruz,CA95064
+UniversityofWashington,Dept. ofEE,UWEETR-2012-0006
+Revised25-Aug-16: orig.2012
+Abstract
+ThisdocumentdescribestheforwardandinversekinematicsequationsfortheRaven-IITM surgicalroboticsre-
+searchplatform.Revised20-Apr-2016toimproveidentificationofcorrectIKsolutionsandtoincludethecalculation
+ofJacobianmatrixinFrame6.Revised25-Aug-2016toaddmissingCol6([0,0,0,0,0,1]T)totheJacobianMatrix.
+TheauthorsgratefullyacknowledgethesupportofDanyingHu,MohammadHaghiaghipanah,andNationalSci-
+enceFoundationCyberPhysicalSystemsGrant0930930,
+1 Definitions and Frames
+• Reference Pose The Reference Pose (Figure 1) has the two Raven-IIsTM facing each other and viewed such
+thattherowofverticalmotorsaredirectlyvisibleoneacharm.
+• RightArm Thearmwhichappearstotherightinthereferencepose.
+• LeftArm Thearmwhichappearstotheleftinthereferencepose.
+• GreenArm TheRightArm.
+• GoldArm TheLeftArm.
+• BaseFrame AframecenteredontheboltpatternonthesurfaceoftheRaven-IITM base. Thereisaseparate
+BaseframeforeachoftheLeftandRightarms. Theoriginoftheframeliesbetweenthetwobottomboltholes,
+directlybelowthecenterboltofthetoprow,andcoincidentwiththemountingsurfaceontherobot(SeeFigure
+2).
+ThefollowingdiagramshowstheorientationofthetwoBaseFrameswhenfacingtheboltpatternsandthearms
+areintheReferencePose.
+• FrameZeroThisframeistheoriginoftheserialkinematicchainforkinematicanalysisoftherobot. Itsorigin
+isthecenterofmotionofthesphericalmechanism,i.e. theintersectionofaxes1,2,and3.
+1

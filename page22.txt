@@ -1,0 +1,3 @@
+References
+[1] J.Craig. IntroductiontoRobotics: MechanicsandControl. AddisonWesley,1986.
+UWEETR-2012-0006 21

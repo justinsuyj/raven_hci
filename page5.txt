@@ -1,0 +1,22 @@
+Figure4: Illustrationofoffsetbetweenbaseframeandthemotioncenter.
+Figure5: FrameassignmentsforFrame0,1,2,3.
+Frame3hasitsoriginathecenterofacrossformedbetweenthefourspindles,and42.7mmoutfromthesurface
+oftheslidingrail. ElevationabovetherailsetstheaxisofmotionZ coincidentwiththemotioncenter. Thelocation
+3
+offrame3isshowninFigure6.
+2.4.2 InstrumentJoints
+ThelinkframesandDHparametersforinstruments(Axes4-7)arespecifictoeachinstrument, butarethesamefor
+leftandrightarmsiftheinstrumentsareidentical(asindefaultRIItools). ThelinkframesareshowninFigure8. In
+thisfigure,theinstrumentisshownfromthetopasifrestingonatablewiththespindlesdownandviewedfromabove.
+Instrumentframes4-7areoffsetfromthelink3framebyadistance,d ,whichrepresentsthelengthofthetool.
+4
+ForthedefaultRavenIItools,d =458.69mm.
+4
+The surgical instrument can be thought of as three superimposed manipulators. The three manipulators are the
+samethroughjoint6. Thenwehavethree“versions”offrame6.
+• Frame6aThisframeisalignedwiththelowerjaw(whenZ issetsothatZ pointsuprelativetotheinstrument
+4 5
+base).
+• Frame6bThisframerepresentsavirtuallinkwhichisorientedbetweenthejaws.X shouldpointtothegrasp
+6b
+UWEETR-2012-0006 4

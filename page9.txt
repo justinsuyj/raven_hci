@@ -1,0 +1,62 @@
+• X ,X ,X arecolinearandpointinsamedirection.
+5 6a,b,c 7b
+• X =X =X .
+6a 6b 6c
+3 Forward Kinematics Analysis
+LinkTransform
+ThefollowingtransformisobtainedforanylinkwhichhasDHparameters:
+ 
+cθ −sθ 0 a
+N N N−1
+N−1T =   sθ N cα N−1 cθ N cα N−1 −sα N−1 −sα N−1 d N   (3)
+N  sθ N sα N−1 cθ N sα N−1 cα N−1 cα N−1 d N 
+0 0 0 1
+3.1 ForwardKinematicEquations: LeftArm(HKConvention)
+Inthematricesbelowletk =cos(La ),k =sin(La ),k =cos(La ),andk =sin(La ).
+1 12 2 12 3 23 4 23
+ 
+c −s 0 0
+1 1
+0 1 T L/R =    s 1 / 0 −s 1 c1/ 0 −c1 1 0 0 0    (4)
+0 0 0 1
+ 
+c −s 0 0
+2 2
+1T =   s 2 k 1 c 2 k 1 −k 2 0   (5)
+2  s 2 k 2 c 2 k 2 k 1 0 
+0 0 0 1
+ 
+0 −1/1 0 0
+2 3 T L/R =    (−1 k / 3 1)k 4 0 0 (− − 1/ k 1 4 )k 3 (− − 1/ k 1 4 ) d k 3 3 d 3    (6)
+0 0 0 1
+ 
+c −s 0 a
+4 4 3
+3T =   s 4 c 4 0 0   (7)
+4  0 0 1 d 4 
+0 0 0 1
+ 
+c −s 0 0
+5 5
+4T =   0 0 −1 0   (8)
+5  s 5 c 5 0 0 
+0 0 0 1
+ 
+c −s 0 l
+6a 6a w
+5 T =   0 0 −1 0   (9)
+6a  s 6a c 6a 0 0 
+0 0 0 1
+ 
+c −s 0 l
+6b 6b w
+5 T =   0 0 −1 0   (10)
+6b  s 6b c 6b 0 0 
+0 0 0 1
+ 
+c −s 0 l
+6c 6c w
+5 T =   0 0 −1 0   (11)
+6c  s 6a c 6c 0 0 
+0 0 0 1
+UWEETR-2012-0006 8

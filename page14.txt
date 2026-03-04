@@ -1,0 +1,5 @@
+Figure11: TwoposeswithdifferentrelativepositionsofP ,P closerthanP (top),P furtherthanP (bottom). In
+5 5 6 5 6
+thisfigure,thevectordesignatedx isactuallytheprojectionofx ontotheplane{P ,P ,RCM}.
+6 6 5 6
+UWEETR-2012-0006 13

@@ -1,0 +1,71 @@
+Thennote:
+(cid:20)(cid:2)0R (cid:3) (cid:2)0P (cid:3)(cid:21)
+0T = 5 5 (38)
+5 [0] 1
+0X 
+P5
+0P 5 = 0Y P5 (39)
+0Z
+P5
+ 
+d(c s γ +s (c γ γ −γ γ ))
+1 2 3 1 2 2 3 1 4
+0P 5L =    d(s 1 s 2 − γ d 3 ( − c 2 c γ 1 1 ( γ c 3 2 γ + 2 γ γ 3 2 γ − 4 ) γ 1 γ 4 ))    (40)
+1
+ 
+d(c s γ +s (c γ γ +γ γ ))
+1 2 3 1 2 2 3 1 4
+0P 5R =    −d(s 1 s 2 d γ ( 3 c 2 − γ 1 c γ 1 3 (c − 2 γ γ 2 2 γ γ 3 4 + ) γ 1 γ 4 ))    (41)
+1
+Where,0P isknownand,
+5
+0Z =−d(c γ γ +γ γ ) (42)
+P5L 2 1 3 2 4
+0Z =d(c γ γ −γ γ ) (43)
+P5R 2 1 3 2 4
+Solvingthisforc yields2:
+2
+(cid:18)(cid:18) 1 (cid:19)(cid:18) 0Z (cid:19)(cid:19)
+θ =±cos−1 − P5L −γ γ (44)
+2L γ γ d 2 4
+1 3
+(cid:18)(cid:18)
+1
+(cid:19)(cid:18)0Z (cid:19)(cid:19)
+θ =±cos−1 P5R +γ γ (45)
+2R γ γ d 2 4
+1 3
+Therearetwovaluesofd,dependingonthed solution. Howeveronlyoneofthedvaluesproducesanargument
+3
+for the cos−1(x) function which is within (−1 < x < 1). Once the one valid argument is selected, there are two
+solutionsforθ arisingfromthetwosignsofthe±cos−1()function.
+2
+5.6 Computeθ
+1
+Nextwecomputeθ usingd ,θ ,0P .
+1 3 2 5
+RecallEquation40andnotethatfortheleftside:
+0X =d(c s γ +s (c γ γ −γ γ )) (46)
+P5L 1 2 3 1 2 2 3 1 4
+0Y =d(s s γ −c (c γ γ −γ γ )) (47)
+P5L 1 2 3 1 2 2 3 1 4
+Letβ =s γ ,β =c γ γ −γ γ .
+1L 2 3 2L 2 2 3 1 4
+(cid:20)0X (cid:21) (cid:20)
+β β
+(cid:21)(cid:20)
+c
+(cid:21)
+P5L =d 1L 2L 1L (48)
+0Y −β β s
+P5L 2L 1L 1L
+(49)
+And,fortherightside:
+0X =d(c s γ +s (c γ γ +γ γ )) (50)
+P5R 1 2 3 1 2 2 3 1 4
+0Y =d(−s s γ +c (c γ γ +γ γ )) (51)
+P5R 1 2 3 1 2 2 3 1 4
+2It’sinterestingtonotethatwhenθ2=0,trigidentitiesshowthat 0ZP
+d
+5R =sin(La12+La23+90◦).Similarforleftarm.
+UWEETR-2012-0006 15
