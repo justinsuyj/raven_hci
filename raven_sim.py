@@ -36,7 +36,7 @@ def DH_proximal(alpha, a, d, theta):
     ])
 
 
-def raven_left_arm_frames(jpos):
+def raven_left_arm_frames(jpos): # jpos = [J1, ... J7]
     """Return transforms T00..T06 (7 frames) for all joint origins."""
     th1 = jpos[0] + 205
     th2 = jpos[1] + 180
@@ -52,13 +52,13 @@ def raven_left_arm_frames(jpos):
     T45 = DH_proximal(90.0,         0,    0,      th5)
     T56 = DH_proximal(90.0,        13,    0,      th6)
 
-    frames = [np.eye(4)]
-    accum = T01;          frames.append(accum.copy())
-    accum = accum @ T12;  frames.append(accum.copy())
-    accum = accum @ T23;  frames.append(accum.copy())
-    accum = accum @ T34;  frames.append(accum.copy())
-    accum = accum @ T45;  frames.append(accum.copy())
-    accum = accum @ T56;  frames.append(accum.copy())
+    frames = [np.eye(4)]                              # T00
+    accum = T01;          frames.append(accum.copy()) # T01
+    accum = accum @ T12;  frames.append(accum.copy()) # T02
+    accum = accum @ T23;  frames.append(accum.copy()) # T03
+    accum = accum @ T34;  frames.append(accum.copy()) # T04
+    accum = accum @ T45;  frames.append(accum.copy()) # T05
+    accum = accum @ T56;  frames.append(accum.copy()) # T06
     return frames
 
 def raven_right_arm_frames(jpos):
@@ -77,13 +77,13 @@ def raven_right_arm_frames(jpos):
     T45 = DH_proximal(90.0,          0,    0,      th5)
     T56 = DH_proximal(90.0,         13,    0,      th6)
 
-    frames = [np.eye(4)]
-    accum = T01;          frames.append(accum.copy())
-    accum = accum @ T12;  frames.append(accum.copy())
-    accum = accum @ T23;  frames.append(accum.copy())
-    accum = accum @ T34;  frames.append(accum.copy())
-    accum = accum @ T45;  frames.append(accum.copy())
-    accum = accum @ T56;  frames.append(accum.copy())
+    frames = [np.eye(4)]                              # T00
+    accum = T01;          frames.append(accum.copy()) # T01
+    accum = accum @ T12;  frames.append(accum.copy()) # T02
+    accum = accum @ T23;  frames.append(accum.copy()) # T03
+    accum = accum @ T34;  frames.append(accum.copy()) # T04
+    accum = accum @ T45;  frames.append(accum.copy()) # T05
+    accum = accum @ T56;  frames.append(accum.copy()) # T06
     return frames
 
 # Left arm:Frame-0 to base-frame transforms
@@ -106,7 +106,8 @@ T_0B_RIGHT = np.array([
 T_0B = T_0B_LEFT
 
 
-def to_base(point_fm0, arm='left'):
+def fm02base(point_fm0, arm='left'):
+    '''Transforms a 3D point from frame-0 coordinates to base frame coordinates'''
     T = T_0B_LEFT if arm == 'left' else T_0B_RIGHT
     p = np.array([point_fm0[0], point_fm0[1], point_fm0[2], 1.0])
     return (T @ p)[:3]
@@ -117,7 +118,8 @@ def get_robot_points(jpos, samples_per_link=10, arm='left'):
     """Return a list of 3D points (base frame) sampling the full arm body."""
     fk = raven_left_arm_frames if arm == 'left' else raven_right_arm_frames
     frames = fk(jpos)
-    origins = [to_base(f[:3, 3], arm) for f in frames]
+
+    origins = [fm02base(f[:3, 3], arm) for f in frames]
     points = list(origins)
     for i in range(len(origins) - 1):
         for t in np.linspace(0, 1, samples_per_link + 2)[1:-1]:
@@ -164,7 +166,7 @@ def random_jpos_in_workspace(obstacles=None, max_attempts=200, arm='left'):
     for _ in range(max_attempts):
         q = random_jpos()
         frames = fk(q)
-        ee = to_base(frames[-1][:3, 3], arm)
+        ee = fm02base(frames[-1][:3, 3], arm)
         if np.all(ee >= ws_min) and np.all(ee <= ws_max):
             if obstacles:
                 col, _ = check_collision(q, obstacles, samples_per_link=6, arm=arm)
@@ -498,7 +500,7 @@ def sample_workspace_surfaces(n=15, arm='left'):
     surfaces = []
 
     def _ee(q_arr):
-        return to_base(fk(q_arr)[-1][:3, 3], arm)
+        return fm02base(fk(q_arr)[-1][:3, 3], arm)
 
     # J1 at limits → sweep J2 × J3
     for j1_lim in JOINT_LIMITS[0]:
@@ -790,7 +792,7 @@ def run_interactive():
         fk = _active_fk()
         ws_min, ws_max = _active_ws()
         goal_frames = fk(state[jkey])
-        goal_ee = to_base(goal_frames[-1][:3, 3], arm)
+        goal_ee = fm02base(goal_frames[-1][:3, 3], arm)
         if not (np.all(goal_ee >= ws_min) and np.all(goal_ee <= ws_max)):
             set_info('Goal EE is outside workspace! Adjust sliders.')
             return
@@ -820,7 +822,7 @@ def run_interactive():
         state['goal'] = random_jpos_in_workspace(state['obstacles'], arm=arm)
         _redraw()
         goal_frames = fk(state['goal'])
-        goal_ee = to_base(goal_frames[-1][:3, 3], arm)
+        goal_ee = fm02base(goal_frames[-1][:3, 3], arm)
         ax.scatter(*goal_ee, c='lime', s=120, marker='*', zorder=10, label='Goal EE')
         ax.legend(loc='upper left', fontsize=8)
         set_info(f'Goal EE: ({goal_ee[0]:.0f}, {goal_ee[1]:.0f}, {goal_ee[2]:.0f})')
@@ -847,7 +849,7 @@ def run_interactive():
             set_info('Set a goal first!')
             return
         start_frames = fk(state[jkey])
-        start_ee = to_base(start_frames[-1][:3, 3], arm)
+        start_ee = fm02base(start_frames[-1][:3, 3], arm)
         if not (np.all(start_ee >= ws_min) and np.all(start_ee <= ws_max)):
             set_info('Start EE is outside workspace! Use Rand Start.')
             return
@@ -867,7 +869,7 @@ def run_interactive():
             ee_pts = []
             for q in path:
                 frames = fk(q)
-                ee_pts.append(to_base(frames[-1][:3, 3], arm))
+                ee_pts.append(fm02base(frames[-1][:3, 3], arm))
             state['path_ee'] = ee_pts
             set_info(f'Path found: {len(path)} waypoints.')
 
@@ -892,7 +894,7 @@ def run_interactive():
                      state['path_ee'], zoom=state['zoom'])
             if state['goal'] is not None:
                 gf = fk(state['goal'])
-                gee = to_base(gf[-1][:3, 3], arm)
+                gee = fm02base(gf[-1][:3, 3], arm)
                 ax.scatter(*gee, c='lime', s=120, marker='*', zorder=10)
             set_info(f'Animating {step_i + 1}/{n}')
             fig.canvas.draw()
