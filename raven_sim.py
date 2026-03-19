@@ -86,7 +86,8 @@ def raven_right_arm_frames(jpos):
     accum = accum @ T56;  frames.append(accum.copy()) # T06
     return frames
 
-# Left arm:Frame-0 to base-frame transforms
+# Frame-0 to base-frame transforms (Equations 1-2 of reference document).
+# Each arm has its own base frame at its bolt pattern on the robot platform.
 T_0B_LEFT = np.array([
     [0,  0, 1, 300.71],
     [0, -1, 0, 61],
@@ -94,7 +95,6 @@ T_0B_LEFT = np.array([
     [0,  0, 0, 1]
 ])
 
-# Right arm: mirrored (z-col negated, y-col negated, tx negated)
 T_0B_RIGHT = np.array([
     [0,  0, -1, -300.71],
     [0,  1,  0,  61],
@@ -102,15 +102,27 @@ T_0B_RIGHT = np.array([
     [0,  0,  0,   1]
 ])
 
+# World-frame offsets for each arm's base frame.
+# On the real robot the base frames sit on opposite sides of the platform
+# and the linkages extend inward so the remote motion centers (frame-0 origins)
+# converge above the surgical site.  These offsets position each arm's base
+# in the shared world frame so the two frame-0 origins nearly overlap.
+#   Left  frame-0 in its base: [300.71, 61, -7]  → world ≈ [0, 61, -7]
+#   Right frame-0 in its base: [-300.71, 61, -7] → world ≈ [0, 61, -7]
+_BASE_WORLD_LEFT  = np.array([-300.71, 0.0, 0.0])
+_BASE_WORLD_RIGHT = np.array([ 300.71, 0.0, 0.0])
+
 # Keep T_0B as alias for left arm (backward compat)
 T_0B = T_0B_LEFT
 
 
 def fm02base(point_fm0, arm='left'):
-    '''Transforms a 3D point from frame-0 coordinates to base frame coordinates'''
+    '''Transforms a 3D point from frame-0 coordinates to world frame.
+    Applies T_0B (frame-0 → arm base) then the arm's base world offset.'''
     T = T_0B_LEFT if arm == 'left' else T_0B_RIGHT
+    offset = _BASE_WORLD_LEFT if arm == 'left' else _BASE_WORLD_RIGHT
     p = np.array([point_fm0[0], point_fm0[1], point_fm0[2], 1.0])
-    return (T @ p)[:3]
+    return (T @ p)[:3] + offset
 
 
 
@@ -143,15 +155,15 @@ NUM_JOINTS = 7
 
 DEFAULT_JPOS = np.array([(lo + hi) / 2.0 for lo, hi in JOINT_LIMITS])
 
-# Workspace bounding box in base frame (determined empirically via Monte Carlo FK)
+# Workspace bounding box in world frame (determined empirically via Monte Carlo FK)
 # EE reachable region sits within these bounds
-WS_EE_MIN_L = np.array([250.0,   45.0, -160.0])
-WS_EE_MAX_L = np.array([370.0,  175.0,  -30.0])
-WS_EE_MIN_R = np.array([-370.0,  45.0, -160.0])
-WS_EE_MAX_R = np.array([-250.0, 175.0,  -30.0])
+WS_EE_MIN_L = np.array([-55.0,  40.0, -160.0])
+WS_EE_MAX_L = np.array([ 70.0, 175.0,  -30.0])
+WS_EE_MIN_R = np.array([-70.0,  45.0, -160.0])
+WS_EE_MAX_R = np.array([ 50.0, 175.0,  -30.0])
 # Combined bounds covering both arms
-WS_EE_MIN = np.array([-370.0,  45.0, -160.0])
-WS_EE_MAX = np.array([ 370.0, 175.0,  -30.0])
+WS_EE_MIN = np.array([-70.0,  40.0, -160.0])
+WS_EE_MAX = np.array([ 70.0, 175.0,  -30.0])
 
 
 def random_jpos():
@@ -446,8 +458,8 @@ def save_batch_summary(summaries, filepath):
 # ===========================================================================
 
 BASE_CORNERS = np.array([
-    [100, 0, 0], [100, 100, 0], [-200, 100, 0], [-200, 0, 0],
-    [100, 0, 100], [100, 100, 100], [-200, 100, 100], [-200, 0, 100],
+    [80, 0, 0], [80, 100, 0], [-80, 100, 0], [-80, 0, 0],
+    [80, 0, 80], [80, 100, 80], [-80, 100, 80], [-80, 0, 80],
 ])
 BASE_FACES = [
     [BASE_CORNERS[i] for i in [0, 1, 2, 3]],
